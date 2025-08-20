@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>J M LANCHES</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <img src="imagens/LOGO.png" class="logo">
+      <h1>J M LANCHES</h1>
+      
+  </header>
+
+  <main>
+<div>
+    
+      <h2>Carrinho &#x1F6D2;:</h2>
+      <ul id="lista"></ul>
+      <p>Total: R$ <span id="total">0</span></p>
+      <button onclick="finalizar()" class="finalizar">Finalizar Pedido</button>
+      
+</div>
+<h1 class="cardapio">CARDÁPIO &#x1F37D;&#xFE0F;: </h1>
+            <hr>
+      <div>
+        <h1>Macarronada &#x1F35C;</h1>
+        <ul>
+            <li>Macarronada Frango P - R$ 15,00  <button onclick="addCarrinho('Macarronada Frango P', 15)">Adicionar</button> </li>
+            <li>Macarronada Frango M - R$ 20,00  <button onclick="addCarrinho('Macarronada Frango M', 20)">Adicionar</button> </li>
+            <li>Macarronada Carne P - R$ 15,00  <button onclick="addCarrinho('Macarronada Carne P', 15)">Adicionar</button> </li>
+            <li>Macarronada Carne M - R$ 20,00 <button onclick="addCarrinho('Macarronada Carne M', 20)">Adicionar</button> </li>
+            <li>Macarronada Mista - R$ 20,00  <button onclick="addCarrinho('Macarronada Mista', 20)">Adicionar</button> </li>
+        </ul>
+       
+      </div>
+<hr>
+       <div>
+        <h1>Cachorro-Quente &#x1F32D;</h1>
+        <ul>
+            <li>Cachorro Quente Frango - R$ 8,00  <button onclick="addCarrinho('Cachorro Quente Frango', 8)">Adicionar</button> </li>
+            <li>Cachorro Quente Carne - R$ 8,00  <button onclick="addCarrinho('Cachorro Quente Carne', 8)">Adicionar</button> </li>
+            <li>Cachorro Quente Tradicional - R$ 6,00  <button onclick="addCarrinho('Cachorro Quente Tradicional', 6)">Adicionar</button> </li>
+          
+        </ul>
+       
+      </div>
+<hr>
+       <div>
+        <h1>Hambúrgueres &#x1F354; </h1>
+        <ul>
+            <li>Hambúrguer Tradicional - R$ 10,00  <button onclick="addCarrinho('Hambúrguer Tradicional', 10)">Adicionar</button> </li>
+
+        </ul>
+       
+      </div>
+<hr>
+       <div>
+        <h1>Panquecas &#x1F95F;</h1>
+        <ul>
+            <li>Panqueca Frango - R$ 8,00  <button onclick="addCarrinho('Panqueca Frango', 8)">Adicionar</button> </li>
+            <li>Panqueca Carne - R$ 8,00  <button onclick="addCarrinho('Panqueca Carne', 8)">Adicionar</button> </li>
+            <li>Panqueca Frango C/ Queijo - R$ 10,00  <button onclick="addCarrinho('Panqueca Frango C/ Queijo', 10)">Adicionar</button> </li>
+   
+        </ul>
+       
+      </div>
+<hr>
+       <div>
+        <h1>Misto Quente &#x1F32E;</h1>
+        <ul>
+            <li>Misto Quente Tradicional - R$ 5,00  <button onclick="addCarrinho('Misto Quente Tradicional', 5)">Adicionar</button> </li>
+            <li>Misto Quente Especial - R$ 7,00  <button onclick="addCarrinho('Misto Quente Especial', 7)">Adicionar</button> </li>
+           
+        </ul>
+       
+      </div>
+<hr>
+       <div>
+        <h1>Mousse no Pote &#x1F36E;</h1>
+        <p>(consultar sabores disponíveis)</p>
+        <ul>
+            <li>Mousse no Pote - R$ 8,00  <button onclick="addCarrinho('Mousse no Pote', 8)">Adicionar</button> </li>
+         
+        </ul>
+       
+      </div>
+<hr>
+       <div>
+        <h1>Bebidas &#x1F379;</h1>
+        <ul>
+            <li>Suco Natural 150ml - R$ 3,00  <button onclick="addCarrinho('Suco Natural 150ml', 3)">Adicionar</button> </li>
+            <li>Suco Natural 250ml - R$ 5,00  <button onclick="addCarrinho('Suco Natural 250ml', 5)">Adicionar</button> </li>
+            <li>Refrigerante Lata - R$ 5,00  <button onclick="addCarrinho('Refrigerante Lata', 5)">Adicionar</button> </li>
+         
+        </ul>
+  <hr>     
+      </div>
+
+     
+
+  </main>
+
+  <footer>
+    <img src="imagens/LOGO.png" class="roda-pe">
+  </footer>
+
+  <script>
+    let carrinho = [];
+    let total = 0;
+
+    function addCarrinho(produto, preco) {
+      carrinho.push({produto, preco});
+      total += preco;
+      atualizarCarrinho();
+    }
+
+    function removerItem(index) {
+      total -= carrinho[index].preco; // desconta o valor
+      carrinho.splice(index, 1);      // remove o item do array
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      let lista = document.getElementById("lista");
+      lista.innerHTML = "";
+      carrinho.forEach((item, index) => {
+        let li = document.createElement("li");
+        li.textContent = `${item.produto} - R$${item.preco} `;
+        
+        let btn = document.createElement("button");
+        btn.textContent = "Remover";
+        btn.onclick = () => removerItem(index);
+
+        li.appendChild(btn);
+        lista.appendChild(li);
+      });
+      document.getElementById("total").innerText = total;
+    }
+
+    function finalizar() {
+      if (carrinho.length === 0) {
+        alert("Carrinho vazio!");
+        return;
+      }
+
+      let mensagem = "Olá, quero comprar:\n";
+      carrinho.forEach(item => {
+        mensagem += `- ${item.produto} (R$${item.preco})\n`;
+      });
+      mensagem += `Total: R$${total}`;
+
+      let url = "https://wa.me/5598988443192?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>

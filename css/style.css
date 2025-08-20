@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+
+:root{
+    --cor1:#F2C46D;
+    --cor2:#F2B705;
+    --cor3:#F2620F;
+    --cor4:#D92D07;
+    --cor5:#703000;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+header{ 
+      font-family: "Do Hyeon", sans-serif;
+    text-align: center;
+    background-image: linear-gradient(to bottom,var(--cor2),var(--cor3), var(--cor4));
+    padding: 10px 0 0 0;
+    color: white;
+
+}
+
+main{
+   background-color: black;
+  font-family: "PT Sans", sans-serif;
+    margin: auto;
+    padding: 10px;
+    color: white;
+}
+div{
+    margin: 50px;
+    
+}
+button{background-color: #F2620F;
+    padding: 20px;
+    font-size: 2em;
+    color: white;
+}
+li{margin: 8px;}
+
+main h1{ 
+     font-family: "Bagel Fat One", system-ui,sans-serif;
+     font-weight: normal;
+    background-image: linear-gradient(to right, rgb(255, 132, 1), transparent);
+    color:#ffffff; 
+    font-size: 3em;
+    text-align: left;
+    margin-bottom: 20px;
+     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.449);
+     padding: 0 0 0 10px;
+
+}
+ul{
+   padding: 10px;
+   border-radius: 10px;
+}
+.logo{
+    width: 200px;
+}
+
+.finalizar{
+    padding: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.cardapio{
+      font-family: "Do Hyeon", sans-serif;
+     font-weight: normal;
+    background-image: linear-gradient(to right, rgb(255, 1, 1), transparent);
+    color:#ffffff; 
+    font-size: 3em;
+    text-align: left;
+    margin-bottom: 20px;
+     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.449);
+     padding: 0 0 0 10px;
+}
+
+footer{
+    background-image: linear-gradient(to top,var(--cor2), var(--cor3),var(--cor4));
+
+}
+.roda-pe{
+    width: 200px;
+    height: auto;
+    margin: auto;
+    display: block;
+}

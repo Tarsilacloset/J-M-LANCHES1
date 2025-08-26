@@ -14,27 +14,28 @@
   <header>
     <img src="imagens/LOGO.png" class="logo">
     <h1>J M LANCHES</h1>
-  </header>
-
-  <main>
-    <div>
+       <div>
       <h2>Carrinho &#x1F6D2;:</h2>
       <ul id="lista"></ul>
       <p>Total: R$ <span id="total">0</span></p>
-      <button onclick="finalizar()" class="finalizar">Finalizar Pedido</button>
+      <button onclick="finalizar()" class="finalizar"> Retirada no Local</button>
       <button onclick="abrirDelivery()" class="delivery">Delivery</button>
     </div>
 
     <!-- Formulário de Delivery -->
-    <div id="deliveryForm" style="display:none; margin-top:20px; padding:15px; border:1px solid #ccc; border-radius:10px; max-width:350px;">
+    <div id="deliveryForm" style="display:none; margin-top:20px; padding:15px; border:1px solid #ccc; border-radius:10px; max-width:100%;">
       <h2>Endereço para Delivery 🚚</h2>
-      <label>Rua:   <input type="text" id="rua"></label><br><br>
-      <label>Número: <input type="text" id="numero"></label><br><br>
-      <label>Bairro: <input type="text" id="bairro"></label><br><br>
-      <label>Cidade: <input type="text" id="cidade"></label><br><br>
-      <label>Próx:  <input type="text" id="prox"></label><br><br>
+      <label style="font-size: 40px;">Rua:   <input type="text" id="rua" style="padding: 20px; "></label><br><br>
+      <label style="font-size: 40px;">Número: <input type="text" id="numero" style="padding: 20px;" ></label><br><br>
+      <label style="font-size: 40px;">Bairro: <input type="text" id="bairro" style="padding: 20px;"></label><br><br>
+      <label style="font-size: 40px;">Cidade: <input type="text" id="cidade" style="padding: 20px;" ></label><br><br>
+      <label style="font-size: 40px;">Próx:  <input type="text" id="prox" style="padding: 20px;"></label><br><br>
       <button onclick="enviarDelivery()">Enviar Pedido no WhatsApp</button>
     </div>
+  </header>
+
+  <main>
+ 
 
     <h1 class="cardapio">CARDÁPIO &#x1F37D;&#xFE0F;: </h1>
     <hr>
